@@ -28,6 +28,7 @@
 
 let url = ``;
 const buttonSearch = document.querySelector('.js-search');
+const buttonReset = document.querySelector('.js-reset');
 const inputSearch = document.querySelector('.js-input');
 let cardsList = [];
 const cardContainer = document.querySelector('.js-container-cards');
@@ -99,3 +100,10 @@ const handleSearch = (event) => {
 buttonSearch.addEventListener('click', handleSearch);
 
 renderCards(localStorageFavorites, favContainer);
+
+const handleReset = () => {
+  localStorage.removeItem('favorites');
+  inputValue = '';
+};
+
+buttonReset.addEventListener('click', handleReset);
