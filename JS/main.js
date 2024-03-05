@@ -36,18 +36,18 @@ let favoritesList = [];
 
 const handleAddFavorites = (event) => {
   const clickedCardId = event.currentTarget.id;
-  // console.log('clickedCardId', clickedCardId);
-  // console.log('cardList', cardsList);
 
   const cardSelected = cardsList.find((card) => {
-    // console.log('card.mal_id', card.mal_id);
-
     return parseInt(clickedCardId) === card.mal_id;
   });
-  console.log('cardSelected', cardSelected);
+  const cardIndex = favoritesList.findIndex((card) => {
+    return parseInt(clickedCardId) === card.mal_id;
+  });
+  if (cardIndex === -1) {
+    favoritesList.push(cardSelected);
+  }
+  console.log(cardIndex);
 
-  favoritesList.push(cardSelected);
-  console.log('favs', favoritesList);
   renderCards(favoritesList, favContainer);
 };
 
