@@ -53,7 +53,7 @@ const handleSearch = (event) => {
       <h2>${card.title}</h2>`;
         } else {
           html += `<img
-            src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.1999.co.jp%2Feng%2F10852139&psig=AOvVaw3ICK-hws-u_4rtuf1TVX8e&ust=1709716993391000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKjEm6Lm3IQDFQAAAAAdAAAAABAE"
+            src="https://i.redd.it/z3ldse72x7j61.png"
             alt="${card.title}"
           />
           <h2>${card.title}</h2>`;
