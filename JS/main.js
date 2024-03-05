@@ -46,10 +46,12 @@ const handleAddFavorites = (event) => {
   if (cardIndex === -1) {
     favoritesList.push(cardSelected);
   }
-  console.log(cardIndex);
+  // console.log(cardIndex);
+  localStorage.setItem('favorites', JSON.stringify(favoritesList));
 
   renderCards(favoritesList, favContainer);
 };
+const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
 
 const renderCards = (cards, containerDOM) => {
   let html = '';
@@ -95,3 +97,5 @@ const handleSearch = (event) => {
 };
 
 buttonSearch.addEventListener('click', handleSearch);
+
+renderCards(localStorageFavorites, favContainer);
