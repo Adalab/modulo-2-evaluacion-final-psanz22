@@ -29,7 +29,7 @@
 let url = `c`;
 const buttonSearch = document.querySelector('.js-search');
 const inputSearch = document.querySelector('.js-input');
-const cardContainer = document.querySelector('.js-card');
+const cardContainer = document.querySelector('.js-container-cards');
 
 const handleSearch = (event) => {
   let html = '';
@@ -64,3 +64,11 @@ const handleSearch = (event) => {
 };
 
 buttonSearch.addEventListener('click', handleSearch);
+
+//favoritos
+
+const handleFavorites = (event) => {
+  console.log(event.currentTarget);
+};
+
+cardContainer.addEventListener('click', handleFavorites);
