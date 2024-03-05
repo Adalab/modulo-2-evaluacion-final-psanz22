@@ -47,8 +47,7 @@ const handleAddFavorites = (event) => {
   if (cardIndex === -1) {
     favoritesList.push(cardSelected);
   }
-  localStorageFavorites.push(favoritesList);
-  // console.log(cardIndex);
+
   localStorage.setItem('favorites', JSON.stringify(favoritesList)); // string
 
   renderCards(favoritesList, favContainer);
