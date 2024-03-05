@@ -33,7 +33,7 @@ const inputSearch = document.querySelector('.js-input');
 let cardsList = [];
 const cardContainer = document.querySelector('.js-container-cards');
 const favContainer = document.querySelector('.js-container-favorites');
-let favoritesList = [];
+let favoritesList = JSON.parse(localStorage.getItem('favorites')) || [];
 
 const handleAddFavorites = (event) => {
   const clickedCardId = event.currentTarget.id;
@@ -47,12 +47,13 @@ const handleAddFavorites = (event) => {
   if (cardIndex === -1) {
     favoritesList.push(cardSelected);
   }
+  localStorageFavorites.push(favoritesList);
   // console.log(cardIndex);
-  localStorage.setItem('favorites', JSON.stringify(favoritesList));
+  localStorage.setItem('favorites', JSON.stringify(favoritesList)); // string
 
   renderCards(favoritesList, favContainer);
 };
-const localStorageFavorites = JSON.parse(localStorage.getItem('favorites'));
+const localStorageFavorites = JSON.parse(localStorage.getItem('favorites')); // Array
 
 const renderCards = (cards, containerDOM) => {
   let html = '';
