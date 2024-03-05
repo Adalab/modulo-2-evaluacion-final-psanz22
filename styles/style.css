@@ -1,5 +1,4 @@
 body {
-  /* background-color: #000000; */
   background-image: url('https://wallpapercave.com/wp/wp9290568.jpg');
 }
 .js-card {
@@ -21,16 +20,12 @@ img {
   gap: 40px;
   margin: 20px;
 }
-/* .title-results {
-  margin-left: 50%;
-} */
+
 .container-shows {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: #e9d7b7; */
-  background: linear-gradient(beige, brown);
-  border: 2px solid gold;
+  background: linear-gradient(70deg, beige, brown);
   border-radius: 1rem;
 }
 .js-container-cards {
@@ -44,7 +39,7 @@ img {
   display: flex;
   flex-direction: column;
   /* background-color: #ffad49; */
-  background: linear-gradient(beige, brown);
+  background: linear-gradient(120deg, beige, brown);
   border-radius: 1rem;
   border: 3px solid brown;
   padding: 20px;
