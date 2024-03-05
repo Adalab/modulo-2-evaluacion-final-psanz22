@@ -66,7 +66,7 @@ const renderCards = (cards, containerDOM) => {
   <h3>${card.title}</h3></div>`;
     } else {
       html += `<div class="js-card" id="${card.mal_id}"><img
-        src="https://i.redd.it/z3ldse72x7j61.png"
+        src="https://i.redd.it/dtljzwihuh861.jpg"
         alt="${card.title}"
       />
       <h3>${card.title}</h3></div>`;
