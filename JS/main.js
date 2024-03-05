@@ -46,8 +46,11 @@ const handleAddFavorites = (event) => {
   });
   if (cardIndex === -1) {
     favoritesList.push(cardSelected);
+    event.currentTarget.classList.add('fav');
+  } else {
+    favoritesList.splice(cardIndex, 1);
+    event.currentTarget.classList.remove('fav');
   }
-
   localStorage.setItem('favorites', JSON.stringify(favoritesList)); // string
 
   renderCards(favoritesList, favContainer);
@@ -103,7 +106,7 @@ renderCards(localStorageFavorites, favContainer);
 
 const handleReset = () => {
   localStorage.removeItem('favorites');
-  inputValue = '';
+  favoritesList = [];
 };
 
 buttonReset.addEventListener('click', handleReset);

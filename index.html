@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Evaluación Módulo 2 Paula Sanz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <main>
+    <header>
       <h1>Buscador de Series de Anime</h1>
       <form>
         <input
@@ -18,13 +24,15 @@
         <button type="submit" class="js-search">Buscar</button>
         <button type="submit" class="js-reset">Reset</button>
       </form>
+    </header>
+    <main>
       <section class="section-all">
-        <section class="section-favorites">
-          <h2>Favoritas:</h2>
+        <aside class="section-favorites">
+          <h2>Series Favoritas <span>✸</span>:</h2>
           <div class="js-container-favorites"></div>
-        </section>
+        </aside>
         <section class="container-shows">
-          <h2>Series:</h2>
+          <h2 class="title-results">Resultados:</h2>
 
           <div class="js-container-cards">
             <!-- <div class="js-card"> -->
