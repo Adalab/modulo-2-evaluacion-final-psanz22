@@ -27,6 +27,7 @@ img {
   align-items: center;
   background: linear-gradient(70deg, beige, brown);
   border-radius: 1rem;
+  padding: 20px;
 }
 .js-container-cards {
   display: flex;
