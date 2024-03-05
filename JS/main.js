@@ -31,44 +31,48 @@ const buttonSearch = document.querySelector('.js-search');
 const inputSearch = document.querySelector('.js-input');
 const cardContainer = document.querySelector('.js-container-cards');
 
-const handleSearch = (event) => {
+const renderCards = (cards) => {
   let html = '';
-  event.preventDefault();
-  const inputValue = inputSearch.value;
-  url = `https://api.jikan.moe/v4/anime?q=${inputValue}`;
+  for (const card of cards) {
+    if (
+      card.images.jpg.image_url !==
+      'https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png'
+    ) {
+      //   console.log('hol', card.images.jpg.image_url);
+      html += ` <div class="js-card"><img
+    src="${card.images.jpg.image_url}"
+    alt="${card.title}"
+  />
+  <h2>${card.title}</h2></div>`;
+    } else {
+      html += `<div class="js-card"><img
+        src="https://i.redd.it/z3ldse72x7j61.png"
+        alt="${card.title}"
+      />
+      <h2>${card.title}</h2></div>`;
+    }
+    cardContainer.innerHTML = html;
+    // const cardElements = document.querySelectorAll('.js-card');
+
+    // for (const cardElement of cardElements) {
+    //   cardElements.addEventListener('click', handleFavorites);
+    // }
+  }
+};
+const fetching = () => {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       const cards = data.data;
-      for (const card of cards) {
-        if (
-          card.images.jpg.image_url !==
-          'https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png'
-        ) {
-          //   console.log('hol', card.images.jpg.image_url);
-          html += `<img
-        src="${card.images.jpg.image_url}"
-        alt="${card.title}"
-      />
-      <h2>${card.title}</h2>`;
-        } else {
-          html += `<img
-            src="https://i.redd.it/z3ldse72x7j61.png"
-            alt="${card.title}"
-          />
-          <h2>${card.title}</h2>`;
-        }
-        cardContainer.innerHTML = html;
-      }
+      renderCards(cards);
     });
 };
 
-buttonSearch.addEventListener('click', handleSearch);
-
-//favoritos
-
-const handleFavorites = (event) => {
-  console.log(event.currentTarget);
+const handleSearch = (event) => {
+  event.preventDefault();
+  const inputValue = inputSearch.value;
+  url = `https://api.jikan.moe/v4/anime?q=${inputValue}`;
+  fetching();
 };
 
-cardContainer.addEventListener('click', handleFavorites);
+buttonSearch.addEventListener('click', handleSearch);
