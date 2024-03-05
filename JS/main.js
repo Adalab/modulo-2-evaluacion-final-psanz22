@@ -63,13 +63,13 @@ const renderCards = (cards, containerDOM) => {
     src="${card.images.jpg.image_url}"
     alt="${card.title}"
   />
-  <h2>${card.title}</h2></div>`;
+  <h3>${card.title}</h3></div>`;
     } else {
       html += `<div class="js-card" id="${card.mal_id}"><img
         src="https://i.redd.it/z3ldse72x7j61.png"
         alt="${card.title}"
       />
-      <h2>${card.title}</h2></div>`;
+      <h3>${card.title}</h3></div>`;
     }
     containerDOM.innerHTML = html;
     const cardElements = document.querySelectorAll('.js-card');
