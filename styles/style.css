@@ -10,3 +10,7 @@ h2 {
 .fav {
   border: 5px solid gold;
 }
+section {
+  display: flex;
+  justify-content: space-between;
+}
