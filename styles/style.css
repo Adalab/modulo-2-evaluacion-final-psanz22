@@ -14,7 +14,3 @@ section {
   display: flex;
   justify-content: space-between;
 }
-.js-container-favorites {
-  display: flex;
-  flex-direction: column;
-}
