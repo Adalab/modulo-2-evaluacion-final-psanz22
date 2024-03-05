@@ -32,6 +32,7 @@ const inputSearch = document.querySelector('.js-input');
 const cardContainer = document.querySelector('.js-card');
 
 const handleSearch = (event) => {
+  let html = '';
   event.preventDefault();
   const inputValue = inputSearch.value;
   url = `https://api.jikan.moe/v4/anime?q=${inputValue}`;
@@ -40,13 +41,24 @@ const handleSearch = (event) => {
     .then((data) => {
       const cards = data.data;
       for (const card of cards) {
-        console.log('hol', card.images.jpg.image_url);
-
-        cardContainer.innerHTML += `<img
+        if (
+          card.images.jpg.image_url !==
+          'https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png'
+        ) {
+          //   console.log('hol', card.images.jpg.image_url);
+          html += `<img
         src="${card.images.jpg.image_url}"
         alt="${card.title}"
       />
       <h2>${card.title}</h2>`;
+        } else {
+          html += `<img
+            src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.1999.co.jp%2Feng%2F10852139&psig=AOvVaw3ICK-hws-u_4rtuf1TVX8e&ust=1709716993391000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKjEm6Lm3IQDFQAAAAAdAAAAABAE"
+            alt="${card.title}"
+          />
+          <h2>${card.title}</h2>`;
+        }
+        cardContainer.innerHTML = html;
       }
     });
 };
