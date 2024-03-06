@@ -51,18 +51,19 @@ img {
   border-radius: 1rem;
   border: 1px dashed;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #ffe0b2;
+  background-color: wheat;
 }
 button {
   padding: 8px;
   width: 70px;
   border-radius: 1rem;
   border: 1px solid;
-  background-color: #ffe0b2;
+  background-color: wheat;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 button:hover {
-  background-color: yellow;
+  background-color: maroon;
+  color: wheat;
   border: orange;
   font-weight: 700;
 }
@@ -72,7 +73,7 @@ h1 {
   font-style: normal;
   font-size: 50px;
   color: brown;
-  text-shadow: 1px 1px darkred;
+  text-shadow: 1px 1px maroon;
 }
 
 span {
