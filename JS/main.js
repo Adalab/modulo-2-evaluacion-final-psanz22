@@ -60,18 +60,30 @@ const localStorageFavorites = JSON.parse(localStorage.getItem('favorites')); // 
 const renderCards = (cards, containerDOM) => {
   let html = '';
   for (const card of cards) {
+    let isFavorite = false;
+    for (const favorite of favoritesList) {
+      if (favorite.mal_id === card.mal_id) {
+        isFavorite = true;
+        break;
+      }
+    }
+    const isFavoritesContainer = containerDOM === favContainer;
     if (
       card.images.jpg.image_url !==
       'https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png'
     ) {
       //   console.log('hol', card.images.jpg.image_url);
-      html += ` <div class="js-card" id="${card.mal_id}"><img
+      html += ` <div class="js-card ${
+        isFavorite && !isFavoritesContainer ? 'fav' : ''
+      }" id="${card.mal_id}"><img
     src="${card.images.jpg.image_url}"
     alt="${card.title}"
   />
   <h3>${card.title}</h3></div>`;
     } else {
-      html += `<div class="js-card" id="${card.mal_id}"><img
+      html += `<div class="js-card ${
+        isFavorite && !isFavoritesContainer ? 'fav' : ''
+      }" id="${card.mal_id}"><img
         src="https://i.redd.it/dtljzwihuh861.jpg"
         alt="${card.title}"
       />
