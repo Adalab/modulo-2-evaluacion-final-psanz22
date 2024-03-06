@@ -25,7 +25,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(90deg, navajowhite, rosybrown);
+  background: linear-gradient(90deg, bisque, rosybrown);
   border-radius: 1rem;
   padding: 20px;
 }
@@ -40,7 +40,7 @@ img {
   display: flex;
   flex-direction: column;
   /* background-color: #ffad49; */
-  background: linear-gradient(120deg, navajowhite, maroon);
+  background: linear-gradient(90deg, bisque, rosybrown);
   border-radius: 1rem;
   border: 3px solid brown;
   padding: 20px;
@@ -51,14 +51,14 @@ img {
   border-radius: 1rem;
   border: 1px dashed;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: wheat;
+  background-color: bisque;
 }
 button {
   padding: 8px;
   width: 70px;
   border-radius: 1rem;
   border: 1px solid;
-  background-color: wheat;
+  background-color: bisque;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 button:hover {
@@ -72,8 +72,8 @@ h1 {
   font-weight: 400;
   font-style: normal;
   font-size: 50px;
-  color: brown;
-  text-shadow: 1px 1px maroon;
+  color: bisque;
+  text-shadow: 5px 4px 17px maroon;
 }
 
 span {
