@@ -39,7 +39,6 @@ img {
 .section-favorites {
   display: flex;
   flex-direction: column;
-  /* background-color: #ffad49; */
   background: linear-gradient(90deg, bisque, rosybrown);
   border-radius: 1rem;
   border: 3px solid brown;
