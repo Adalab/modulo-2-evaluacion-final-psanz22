@@ -46,20 +46,24 @@ const renderCards = (cards, containerDOM) => {
       card.images.jpg.image_url !==
       'https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png'
     ) {
-      html += ` <div class="js-card ${
+      html += ` 
+      <div class="js-card ${
         isFavorite && !isFavoritesContainer ? 'fav' : ''
       }" id="${card.mal_id}"><img
-    src="${card.images.jpg.image_url}"
-    alt="${card.title}"
-  />
-  <h3>${card.title}</h3></div>`;
+      src="${card.images.jpg.image_url}"
+      alt="${card.title}"
+      />
+      <h4>${card.episodes} episodes</h4>
+      <h3>${card.title}</h3></div>`;
     } else {
-      html += `<div class="js-card ${
+      html += `
+      <div class="js-card ${
         isFavorite && !isFavoritesContainer ? 'fav' : ''
       }" id="${card.mal_id}"><img
         src="https://i.redd.it/dtljzwihuh861.jpg"
         alt="${card.title}"
       />
+      <h4>${card.episodes} episodes</h4>
       <h3>${card.title}</h3></div>`;
     }
     containerDOM.innerHTML = html;
